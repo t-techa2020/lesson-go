@@ -2,29 +2,17 @@ package main
 
 import "fmt"
 
-// 関数外でも宣言できる
-// 型を明示的に指定したいときはvarを使う
-var (
-	i    int     = 1
-	f64  float64 = 1.2
-	s    string  = "test"
-	t, f bool    = true, false
+const Pi = 3.14
+
+const (
+	Username = "test_user"
+	Password = "test_pass"
 )
 
-func foo() {
-	// ↓の方法では、関数内でしか宣言できない
-	xi := 1
-	xi = 2
-	var xf32 float32 = 1.2
-	xs := "test"
-	xt, xf := true, false
-
-	fmt.Println(xi, xf32, xs, xt, xf)
-	fmt.Printf("%T\n", xf32)
-	fmt.Printf("%T\n", xi)
-}
+// var big int = 9223372036854775807 + 1
+const big = 9223372036854775807 + 1
 
 func main() {
-	foo()
-	fmt.Println(i, f64, s, t, f)
+	fmt.Println(Pi, Username, Password)
+	fmt.Println(big - 1)
 }
